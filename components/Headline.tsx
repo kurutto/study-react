@@ -4,7 +4,7 @@ type HeadlineProps = {
   page: string;
 };
 
-export default function Headline({ page }: HeadlineProps) {
+export function Headline({ page }: HeadlineProps) {
   return (
     <div>
       <h1 className={styles.title}>{page} page</h1>
