@@ -1,4 +1,4 @@
-import styles from "@/styles/Home.module.css";
+import classes from "./Headline.module.css";
 import { ReactNode } from "react";
 
 type HeadlineProps = {
@@ -9,7 +9,7 @@ type HeadlineProps = {
 export function Headline({ page, children }: HeadlineProps) {
   return (
     <div>
-      <h1 className={styles.title}>{page} page</h1>
+      <h1 className={classes.title}>{page} page</h1>
       <ol>
         <li>
           Get started by editing {children}.
