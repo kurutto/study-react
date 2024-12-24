@@ -33,6 +33,12 @@
   gap: 32px;
   grid-row-start: 2;
 }
+.main .title{
+  line-height: 1.15;
+  font-size: 4rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
 
 .main ol {
   font-family: var(--font-geist-mono);
