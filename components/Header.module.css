@@ -1,0 +1,16 @@
+.navigation{
+  text-align: center;
+  border-bottom: 1px solid var(--gray-alpha-200);
+}
+.navigation li {
+  display: inline-block;
+}
+.navigation li a {
+  display: block;
+  padding: 25px;
+  transition: background 0.2s ease-in-out;
+  background:#fff;
+}
+.navigation li a:hover {
+  background: var(--button-secondary-hover);
+}

@@ -1,8 +1,9 @@
 .title {
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-transform: capitalize;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 .main ol {
   font-family: var(--font-geist-mono);
