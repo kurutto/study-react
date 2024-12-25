@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "src/styles/Home.module.css";
 import { Footer } from "src/components/Footer";
@@ -31,12 +32,12 @@ export default function Home() {
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
-        <a
+        <Link
           href="/about"
           onClick={handleClick}
         >
           ボタン
-        </a>
+        </Link>
         <Main page="index" />
         <Footer />
       </div>
