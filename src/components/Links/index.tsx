@@ -1,6 +1,6 @@
 import Link from "next/link";
-import classes from "./Links.module.css";
 import Image from "next/image";
+import classes from "src/components/Links/Links.module.css";
 
 const ITEMS = [
   {
