@@ -1,15 +1,12 @@
+import Link from "next/link";
 import classes from "./Links.module.css";
 import Image from "next/image";
 
-export function Links() {
-  return (
-    <div className={classes.ctas}>
-      <a
-        className={classes.primary}
-        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+const ITEMS = [
+  {
+    href: "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    title: (
+      <>
         <Image
           className={classes.logo}
           src="/vercel.svg"
@@ -18,15 +15,34 @@ export function Links() {
           height={20}
         />
         Deploy now
-      </a>
-      <a
-        href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={classes.secondary}
-      >
-        Read our docs
-      </a>
-    </div>
+      </>
+    ),
+    class: classes.primary,
+    target: "_blank",
+  },
+  {
+    href: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    title: <>Read our docs</>,
+    class: classes.secondary,
+    target: "_blank",
+  },
+];
+
+export function Links() {
+  return (
+    <ul className={classes.ctas}>
+      {ITEMS.map(item => (
+        <li key={item.href}>
+          <Link
+            className={item.class}
+            href={item.href}
+            target={item.target ? item.target : ""}
+            rel={item.target === "_blank" ? "noopener noreferrer" : ""}
+          >
+            {item.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }

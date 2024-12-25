@@ -1,6 +1,7 @@
 .ctas {
   display: flex;
   gap: 16px;
+  list-style: none;
 }
 .ctas a {
   appearance: none;
