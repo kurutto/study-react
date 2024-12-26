@@ -1,11 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "src/styles/Home.module.css";
 import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
-import { useCallback } from "react";
+import { useEffect, useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,11 +17,17 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
-  const foo = 123;
-  const handleClick =  useCallback((e:React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    alert(foo);
-  },[])
+  const [count, setCount] = useState(1);
+  const handleClick = () => {
+    setCount(count => count + 1);
+    setCount(count => count + 1);
+  }
+  useEffect(() => {
+    document.body.style.backgroundColor = 'lightblue';
+    return () => {
+      document.body.style.backgroundColor = '';
+    }
+  })
   return (
     <>
       <Head>
@@ -32,12 +37,13 @@ export default function Home() {
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
-        <Link
-          href="/about"
-          onClick={handleClick}
-        >
-          ボタン
-        </Link>
+        <div style={{marginTop:'30px',textAlign:'center'}}>
+          <h1>{count}</h1>
+          <button onClick={handleClick}>
+            ボタン
+          </button>
+        </div>
+        
         <Main page="index" />
         <Footer />
       </div>
