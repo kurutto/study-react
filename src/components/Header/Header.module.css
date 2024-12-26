@@ -9,7 +9,6 @@
   display: block;
   padding: 25px;
   transition: background 0.2s ease-in-out;
-  background:#fff;
 }
 .navigation li a:hover {
   background: var(--button-secondary-hover);
