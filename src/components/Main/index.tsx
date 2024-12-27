@@ -4,7 +4,7 @@ import { Headline } from "src/components/Headline";
 import { ReactNode } from "react";
 type MainProps = {
   page: string;
-  children:ReactNode
+  children?:ReactNode
 };
 export function Main({ page,children }: MainProps) {
   return (
