@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function About({ count, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd }:useCounterType & useInputArrayType) {
+export default function About({ doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd }:useCounterType & useInputArrayType) {
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function About({ count, isShow, handleClick, handleDisplay, text,
       >
         <Main page="about">
           <div style={{ textAlign: "center" }}>
-            {isShow ? <h1>{count}</h1> : null}
+            {isShow ? <h1>{doubleCount}</h1> : null}
 
             <p>
               <button onClick={handleClick}>ボタン</button>
