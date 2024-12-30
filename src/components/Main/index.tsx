@@ -33,18 +33,18 @@ type MainProps = {
   page: string;
   children?:ReactNode
 };
-export function Main({ page,children }: MainProps) {
+export const Main = (props: MainProps) => {
   const [items, setItems] = useState(ITEMS);
   const handleReduce = useCallback(() => {
     setItems(prevItems => prevItems.slice(0,prevItems.length-1));
   },[])
   return (
     <main className={classes.main}>
-      <Headline page={page} handleReduce={handleReduce}>
+      <Headline page={props.page} handleReduce={handleReduce}>
         <code>{items.length}</code>
       </Headline>
       <Links items={items} />
-      {children}
+      {props.children}
     </main>
   );
 }

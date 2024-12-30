@@ -7,7 +7,7 @@ type HeadlineProps = {
   children:ReactNode;
 };
 
-export function Headline({ page, handleReduce, children }: HeadlineProps) {
+export const Headline = ({ page, handleReduce, children }: HeadlineProps) => {
   return (
     <div>
       <h1 className={classes.title}>{page} page</h1>

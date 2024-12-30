@@ -17,9 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function Home(props:useCounterType & useInputArrayType) {
-  const { count, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd } = props ;
-
+const Home = (props:useCounterType & useInputArrayType) => {
   return (
     <>
       <Head>
@@ -31,24 +29,24 @@ export default function Home(props:useCounterType & useInputArrayType) {
       >
         <Main page="index">
           <div style={{ textAlign: "center" }}>
-            {isShow ? <h1>{count}</h1> : null}
+            {props.isShow ? <h1>{props.count}</h1> : null}
 
             <p>
-              <button onClick={handleClick}>ボタン</button>
+              <button onClick={props.handleClick}>ボタン</button>
             </p>
             <p>
-              <button onClick={handleDisplay}>
-                {isShow ? "非表示" : "表示"}
+              <button onClick={props.handleDisplay}>
+                {props.isShow ? "非表示" : "表示"}
               </button>
             </p>
             <p>
-              <input type="text" value={text} onChange={handleChange} />
+              <input type="text" value={props.text} onChange={props.handleChange} />
             </p>
             <p>
-              <button onClick={handleAdd}>追加</button>
+              <button onClick={props.handleAdd}>追加</button>
             </p>
             <ul>
-              {array.map((item) => {
+              {props.array.map((item) => {
                 return <li key={item}>{item}</li>;
               })}
             </ul>
@@ -59,3 +57,5 @@ export default function Home(props:useCounterType & useInputArrayType) {
     </>
   );
 }
+
+export default Home;

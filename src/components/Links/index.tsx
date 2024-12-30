@@ -3,15 +3,14 @@ import classes from "src/components/Links/Links.module.css";
 import { ItemsType } from "src/components/Main/ItemsType";
 
 type LinksProps = {
-  items:ItemsType[];
-}
+  items: ItemsType[];
+};
 
-export function Links({items}:LinksProps) {
-  
+export const Links = (props: LinksProps) => {
   return (
     <div>
       <ul className={classes.ctas}>
-        {items.map(item => (
+        {props.items.map((item) => (
           <li key={item.href}>
             <Link
               className={`${classes[item.class]}`}
@@ -26,4 +25,4 @@ export function Links({items}:LinksProps) {
       </ul>
     </div>
   );
-}
+};
